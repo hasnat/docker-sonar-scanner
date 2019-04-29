@@ -20,6 +20,7 @@ java \
  -Dproject.home=/app \
  $@ -X'\
 > /usr/src/sonar-scanner/sonar-scanner && \
-chmod +x /usr/src/sonar-scanner/sonar-scanner
+chmod +x /usr/src/sonar-scanner/sonar-scanner && \
+mkdir -p /empty.sonar.java.binaries
 
 ENTRYPOINT /usr/src/sonar-scanner/sonar-scanner
