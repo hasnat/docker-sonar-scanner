@@ -8,7 +8,8 @@ ADD http://central.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cl
 
 WORKDIR /app
 RUN echo -e '#!/bin/sh\n\
-eval "$PRE_RUN"\n\
+set -euxo pipefail
+eval "$RUN_BEFORE_SCAN"\n\
 java \
  -classpath /usr/src/sonar-scanner/sonar-scanner-cli.jar \
  $SONAR_SCANNER_OPTS \
